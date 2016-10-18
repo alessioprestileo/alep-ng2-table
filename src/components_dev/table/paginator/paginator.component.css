@@ -1,0 +1,11 @@
+.page-link.disabled, .page-link.disabled:hover {
+  background-color: #e6e6e6;
+  color: white;
+  cursor: not-allowed;
+}
+.page-link:hover {
+  text-decoration: underline;
+}
+.pagination {
+  cursor: pointer;
+}
