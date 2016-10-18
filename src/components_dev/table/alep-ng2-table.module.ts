@@ -17,4 +17,4 @@ import { AlepNg2TableComponent } from './alep-ng2-table.component';
   ],
   providers: [ ]
 })
-export class AlepNg2TableTableModule { }
+export class AlepNg2TableModule { }
