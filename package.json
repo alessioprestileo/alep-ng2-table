@@ -5,7 +5,7 @@
     "lint": "tslint src/**/*.ts",
     "postinstall": "typings install",
     "prepublish": "python ng2-component-embed-html-css.py && tsc",
-    "start": "ng serve",
+    "start": "npm run prepublish && ng serve",
     "test": "tsc && karma start",
     "tsc": "tsc",
     "typings": "typings"

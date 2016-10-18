@@ -2,19 +2,19 @@ import { NgModule } from '@angular/core';
 
 import { PaginatorComponent } from './paginator/paginator.component';
 import { SharedModule } from "../../shared/shared.module";
-import { TableComponent } from './table.component';
+import { AlepNg2TableComponent } from './alep-ng2-table.component';
 
 @NgModule({
   declarations: [
     PaginatorComponent,
-    TableComponent
+    AlepNg2TableComponent
   ],
   imports: [
     SharedModule
   ],
   exports: [
-    TableComponent
+    AlepNg2TableComponent
   ],
   providers: [ ]
 })
-export class TableModule { }
+export class AlepNg2TableTableModule { }

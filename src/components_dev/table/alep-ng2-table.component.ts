@@ -9,11 +9,11 @@ import { PaginatorComponent } from "./paginator/paginator.component";
 import { TableInput } from "../../models/table-input-classes";
 
 @Component({
-  selector: 'app-table',
-  templateUrl: 'table.component.html',
-  styleUrls: ['table.component.css']
+  selector: 'alep-ng2-table',
+  templateUrl: 'alep-ng2-table.component.html',
+  styleUrls: ['alep-ng2-table.component.css']
 })
-export class TableComponent
+export class AlepNg2TableComponent
 implements AfterViewChecked, OnDestroy, OnInit, DoCheck {
   @HostListener('window:resize', ['$event'])
   private onResize(event: any) {

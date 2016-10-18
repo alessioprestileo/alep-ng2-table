@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { AlepNg2TableTableModule } from '../../src/components/table/alep-ng2-table.module';
 import { AppComponent } from './app.component';
 import { GitHubService } from "./shared/services/github.service";
-import { TableModule } from '../../src/components/table/table.module';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -17,8 +17,8 @@ import { SharedModule } from './shared/shared.module';
     FormsModule,
     HttpModule,
 
-    SharedModule,
-    TableModule
+    AlepNg2TableTableModule,
+    SharedModule
   ],
   providers: [
     GitHubService

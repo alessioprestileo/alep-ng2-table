@@ -1,11 +1,11 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
-import { TableComponent } from './table.component';
+import { AlepNg2TableComponent } from './alep-ng2-table.component';
 
 describe('Component: Table', () => {
   it('should create an instance', () => {
-    let component = new TableComponent();
+    let component = new AlepNg2TableComponent();
     expect(component).toBeTruthy();
   });
 });
