@@ -1,6 +1,6 @@
 {
   "name": "alep-ng2-table",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "scripts": {
     "lint": "tslint src/**/*.ts",
     "postinstall": "typings install",
