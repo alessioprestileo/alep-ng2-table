@@ -10,7 +10,7 @@ $ npm install alep-ng2-table --save
 
 ## Dependencies
 
-The styling of the paginator depends on bootstrap 3.3.7
+The styling depends on bootstrap 3.3.7
 
 ## Usage
 
