@@ -18,20 +18,30 @@ export class PaginatorComponent {
   private clickablePages: number[];
 
   constructor() { }
-
+  /* Private methods */
+  private setClickablePages(totClickablePages: number) : void {
+    this.clickablePages = [];
+    let length: number = (
+        this.firstVisiblePage + totClickablePages <=
+        this.pagesIterator.length
+    )
+        ? this.firstVisiblePage + totClickablePages
+        : this.pagesIterator.length + 1;
+    for (let i = this.firstVisiblePage; i < length; i++) {
+      this.clickablePages.push(i);
+    }
+  }
+  /* Public methods */
   public getItemsByPage(tableInput: TableInput) : any[][] {
     let itemsByPage: any[][] = [];
     let items: any[] = tableInput.items;
     let itemsPerPage: number = tableInput.itemsPerPage;
     let sliceStart: number = 0;
     let sliceEnd: number;
-    do
-    {
-      sliceEnd = (
-        sliceStart + itemsPerPage <= items.length
-      )
-        ? sliceStart + itemsPerPage
-        : items.length;
+    do {
+      sliceEnd = (sliceStart + itemsPerPage <= items.length) ?
+        sliceStart + itemsPerPage :
+          items.length;
       itemsByPage.push(items.slice(sliceStart, sliceEnd));
       sliceStart += itemsPerPage;
     }
@@ -65,18 +75,6 @@ export class PaginatorComponent {
     this.pagesIterator = [];
     for (let i = 1; i < totPages + 1; i++) {
       this.pagesIterator.push(i);
-    }
-  }
-  private setClickablePages(totClickablePages: number) : void {
-    this.clickablePages = [];
-    let length: number = (
-      this.firstVisiblePage + totClickablePages <=
-      this.pagesIterator.length
-    )
-      ? this.firstVisiblePage + totClickablePages
-      : this.pagesIterator.length + 1;
-    for (let i = this.firstVisiblePage; i < length; i++) {
-      this.clickablePages.push(i);
     }
   }
 }

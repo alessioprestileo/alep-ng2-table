@@ -51,24 +51,9 @@ implements AfterViewChecked, OnDestroy, OnInit, DoCheck {
   }
   ngDoCheck() {
   }
-
+  /* Private methods */
   private cancelSubs() : void {
     this.subOnResize.unsubscribe();
-  }
-  public onPageClicked(page: number) : void {
-    this.currentPage = page;
-  }
-  public onSortColumn(index: number) {
-    let order: string;
-    if (this.sortedColumn.index === index) {
-      order = (this.sortedColumn.order === 'ascending') ?
-        'descending' : 'ascending';
-    }
-    else {
-      order = 'ascending';
-    }
-    this.sortColumn(index, order);
-    this.updateItemsByPage();
   }
   private setItemsByPage() : void {
     this.itemsByPage = this.paginator.getItemsByPage(this.tableInput);
@@ -83,10 +68,11 @@ implements AfterViewChecked, OnDestroy, OnInit, DoCheck {
   }
   private setTableContainerHeight() : void {
     let container: HTMLElement = this.containerChild.nativeElement;
-    let containerHeight: number = container.clientHeight;
     let paginator: HTMLElement = this.paginatorChild.nativeElement;
-    let paginatorHeight: number = paginator.clientHeight;
     let tableContainer: HTMLElement = this.tableContainerChild.nativeElement;
+
+    let containerHeight: number = container.clientHeight;
+    let paginatorHeight: number = paginator.clientHeight;
     tableContainer.style.height = containerHeight - paginatorHeight + 'px';
   }
   private sortTableInputItems(propName: string) : void {
@@ -97,5 +83,21 @@ implements AfterViewChecked, OnDestroy, OnInit, DoCheck {
   }
   private updateItemsByPage() : void {
     this.setItemsByPage();
+  }
+  /* Public methods */
+  public onPageClicked(page: number) : void {
+    this.currentPage = page;
+  }
+  public onSortColumn(index: number) {
+    let order: string;
+    if (this.sortedColumn.index === index) {
+      order = (this.sortedColumn.order === 'ascending') ?
+        'descending' : 'ascending';
+    }
+    else {
+      order = 'ascending';
+    }
+    this.sortColumn(index, order);
+    this.updateItemsByPage();
   }
 }
