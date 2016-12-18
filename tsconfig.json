@@ -14,8 +14,7 @@
     "src/index.ts"
   ],
   "exclude": [
-    "app_dev",
-    "components_dev",
+    "src/components_dev",
     "dev",
     "dist",
     "node_modules"
